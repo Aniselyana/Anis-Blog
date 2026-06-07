@@ -20,81 +20,97 @@
     </nav>
 
     <main class="container">
-        <!-- Tajuk Halaman Baharu -->
+        <!-- Tajuk Halaman -->
         <h1 class="page-title">Academic Projects & Insights</h1>
 
-        <!-- GRID 3 KAD PROFIOL -->
+        <!-- GRID 3 KAD PROJEK -->
         <section class="blog-grid">
             
             <!-- KAD PROJEK 1 -->
             <div class="blog-card">
                 <div class="blog-img-container">
+                    <!-- Gambar Depan Kad -->
                     <img src="gambar-ar.png" alt="AR IsyaratKu" class="blog-project-img">
                 </div>
                 <div class="blog-card-content">
                     <span class="project-tag">Augmented Reality</span>
                     <h3 class="project-title">AR IsyaratKu</h3>
-                    <p class="project-desc">
-                        An educational Augmented Reality application designed to help users learn sign language through interactive 3D experiences.
-                        <!-- DIBAIKI: Teks tambahan yang disorokkan pada mulanya -->
-                        <span class="more-text"> This project integrates Unity and Vuforia SDK to display real-time 3D hand gestures when scanning specialized flashcards, aimed at bridging the communication gap.</span>
-                    </p>
-                    <!-- DIBAIKI: Ditukar menjadi <button> dengan fungsi klik JavaScript -->
-                    <button onclick="toggleReadMore(this)" class="project-btn">Read More &rarr;</button>
+                    <p class="project-desc">An educational Augmented Reality application designed to help users learn sign language through interactive 3D experiences.</p>
+                    
+                    <!-- DIKEMAS KINI: data-evidence diletakkan nama fail gambar bukti berbeza (bukti-ar.png) -->
+                    <button onclick="openModal(this)" data-title="AR IsyaratKu - Gambar Bukti" data-evidence="bukti AR.png" class="project-btn">Read More &rarr;</button>
                 </div>
             </div>
 
             <!-- KAD PROJEK 2 -->
             <div class="blog-card">
                 <div class="blog-img-container">
+                    <!-- Gambar Depan Kad -->
                     <img src="gambar-3d.jpg" alt="3D Room Transformation Animation" class="blog-project-img">
                 </div>
                 <div class="blog-card-content">
                     <span class="project-tag">3D Animation</span>
                     <h3 class="project-title">3D Room Transformation Animation</h3>
-                    <p class="project-desc">
-                        A messy room is transformed into a clean, organized, and attractive space using 3D animation techniques.
-                        <!-- DIBAIKI: Teks tambahan yang disorokkan pada mulanya -->
-                        <span class="more-text"> Developed using Autodesk Maya/Blender, this project focuses on texturing, advanced lighting setups, and keyframe animation to deliver a realistic before-and-after interior transition.</span>
-                    </p>
-                    <!-- DIBAIKI: Ditukar menjadi <button> dengan fungsi klik JavaScript -->
-                    <button onclick="toggleReadMore(this)" class="project-btn">Read More &rarr;</button>
+                    <p class="project-desc">A messy room is transformed into a clean, organized, and attractive space using 3D animation techniques.</p>
+                    
+                    <!-- DIKEMAS KINI: data-evidence diletakkan nama fail gambar bukti berbeza (bukti-3d.jpg) -->
+                    <button onclick="openModal(this)" data-title="3D Room Transformation - Gambar Bukti" data-evidence="bukti 3D.png" class="project-btn">Read More &rarr;</button>
                 </div>
             </div>
 
             <!-- KAD PROJEK 3 -->
             <div class="blog-card">
                 <div class="blog-img-container">
+                    <!-- Gambar Depan Kad -->
                     <img src="gambar-web.jpg" alt="FluffyCones Website" class="blog-project-img">
                 </div>
                 <div class="blog-card-content">
                     <span class="project-tag">Web Development</span>
                     <h3 class="project-title">FluffyCones Website</h3>
-                    <p class="project-desc">
-                        A business website developed for an ice cream company, focusing on user experience and digital marketing.
-                        <!-- DIBAIKI: Teks tambahan yang disorokkan pada mulanya -->
-                        <span class="more-text"> Built with responsive HTML, CSS, and interactive JavaScript features, this site includes an interactive product menu, customer review slider, and a fully functional contact form.</span>
-                    </p>
-                    <!-- DIBAIKI: Ditukar menjadi <button> dengan fungsi klik JavaScript -->
-                    <button onclick="toggleReadMore(this)" class="project-btn">Read More &rarr;</button>
+                    <p class="project-desc">A business website developed for an ice cream company, focusing on user experience and digital marketing.</p>
+                    
+                    <!-- DIKEMAS KINI: data-evidence diletakkan nama fail gambar bukti berbeza (bukti-web.jpg) -->
+                    <button onclick="openModal(this)" data-title="FluffyCones Website - Gambar Bukti" data-evidence="bukti-web.jpg" class="project-btn">Read More &rarr;</button>
                 </div>
             </div>
 
         </section>
     </main>
 
-    <!-- KOD JAVASCRIPT: Mengawal fungsi sorok dan papar teks -->
+    <!-- ==========================================
+         STRUKTUR POPUP MODAL (TERSEMBUNYI SECARA DEFAULT)
+         ========================================== -->
+    <div id="evidenceModal" class="modal-overlay" onclick="closeModalOutside(event)">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle" class="modal-title">Gambar Bukti</h3>
+            <div class="modal-body">
+                <img id="modalImg" src="" alt="Bukti Projek" class="modal-evidence-img">
+            </div>
+        </div>
+    </div>
+
+    <!-- KOD JAVASCRIPT UNTUK KAWALAN POPUP -->
     <script>
-    function toggleReadMore(button) {
-        // Mencari class .more-text di dalam kad yang sama sahaja
-        var moreText = button.parentElement.querySelector('.more-text');
+    function openModal(button) {
+        var title = button.getAttribute('data-title');
+        var evidenceSrc = button.getAttribute('data-evidence');
         
-        if (moreText.style.display === "none" || moreText.style.display === "") {
-            moreText.style.display = "inline"; // Papar teks
-            button.innerHTML = "Read Less &larr;"; // Tukar ayat butang
-        } else {
-            moreText.style.display = "none"; // Sorok semula teks
-            button.innerHTML = "Read More &rarr;"; // Kembalikan ayat asal
+        document.getElementById('modalTitle').innerText = title;
+        document.getElementById('modalImg').src = evidenceSrc;
+        
+        document.getElementById('evidenceModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        document.getElementById('evidenceModal').classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    function closeModalOutside(event) {
+        if (event.target.classList.contains('modal-overlay')) {
+            closeModal();
         }
     }
     </script>

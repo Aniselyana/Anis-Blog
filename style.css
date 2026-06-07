@@ -760,16 +760,96 @@ body {
     }
 }
 /* ==========================================================================
-   GAYA KAWALAN UNTUK FUNGSI READ MORE
+   REKA BENTUK POPUP MODAL GAMBAR BUKTI (THEME GLOW)
    ========================================================================== */
 
-/* Menyembunyikan teks tambahan secara lalai (default) */
-.more-text {
-    display: none;
-    color: #e5def2; /* Warna teks tambahan dibuat sedikit terang untuk dibaca */
+/* Latar belakang kabur di belakang popup (Overlay) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 5, 22, 0.85); /* Ungu gelap hitam yang sangat telus */
+    backdrop-filter: blur(8px); /* Kesan kabur profesional */
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Memastikan ia sentiasa berada di lapisan paling atas */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
-/* Mengubah tag <a> sebelum ini kepada reka bentuk <button> yang bersih */
+/* Aktifkan popup apabila butang ditekan */
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Kotak Kandungan Popup (Modal Content Box) */
+.modal-content {
+    background: #130b24; /* Warna tema ungu gelap blog Anis */
+    border: 2px solid var(--purple-neon, #d946ef); /* Border menyala neon */
+    box-shadow: 0 0 30px rgba(217, 70, 239, 0.3);
+    width: 90%;
+    max-width: 650px;
+    border-radius: 20px;
+    padding: 25px;
+    position: relative;
+    transform: scale(0.85);
+    transition: transform 0.3s ease;
+}
+
+/* Kesan animasi zoom masuk yang lancar semasa popup aktif */
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+/* Butang Pangkah Tutup (Close Button 'X') */
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    color: #a496c0;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+    color: var(--purple-neon, #d946ef);
+}
+
+/* Tajuk di dalam Popup */
+.modal-title {
+    margin: 0 0 20px 0;
+    font-size: 1.25rem;
+    color: #ffffff;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+/* Ruang Letak Gambar */
+.modal-body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Gaya Gambar Bukti */
+.modal-evidence-img {
+    width: 100%;
+    max-height: 450px; /* Menghalang gambar daripada terlalu panjang ke bawah skrin */
+    object-fit: contain; /* Mengekalkan nisbah asal gambar supaya tidak terkemek */
+    border-radius: 10px;
+    background: #090514;
+}
+
+/* Rekabentuk Butang Kekal Konsisten */
 .project-btn {
     background: none;
     border: none;
@@ -780,7 +860,7 @@ body {
     cursor: pointer;
     align-self: flex-start;
     padding: 0;
-    margin-top: auto; /* Memastikan butang sentiasa duduk rapat di bahagian bawah kad */
+    margin-top: auto;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
