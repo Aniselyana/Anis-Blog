@@ -642,6 +642,28 @@ body {
         grid-template-columns: repeat(2, 1fr); /* 2 Kolum bersebelahan */
     }
 }
+.btn-resume {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #7c3aed, #d946ef);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+}
+
+.btn-resume i {
+    margin-right: 8px; /* Jarak antara ikon dan teks */
+}
+
+.btn-resume:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(217, 70, 239, 0.5);
+    filter: brightness(1.1);
+}
 /* ==========================================================================
    REKA BENTUK HALAMAN ACADEMIC PROJECTS (BERDASARKAN image_4dc2a2.jpg)
    ========================================================================== */
