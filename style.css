@@ -56,10 +56,11 @@ body {
     color: var(--text-main);
     letter-spacing: 2px;
     text-transform: uppercase;
+    position: relative;
 }
 
-/* Kesan titik neon ungu pada logo */
-.logo::sidebar, .logo::after {
+/* Kesan titik neon ungu pada logo (Dibaiki dari ::sidebar) */
+.logo::after {
     content: '.';
     color: var(--purple-neon);
     animation: pulseGlow 2s infinite;
@@ -87,7 +88,7 @@ body {
     font-size: 0.95rem;
     transition: all 0.3s ease;
     padding: 8px 16px;
-    border-radius: 20px; /* Tukar jadi bentuk kapsul pill */
+    border-radius: 20px; /* Bentuk kapsul pill */
 }
 
 .nav-links a:hover {
@@ -96,7 +97,110 @@ body {
     box-shadow: 0 0 15px rgba(217, 70, 239, 0.2);
 }
 
-/* --- 3. REKA BENTUK HALAMAN ABOUT (KAD LENGCUK MODEN) --- */
+/* --- 3. HERO SECTION BARU (BERDASARKAN image_591ca4.jpg) --- */
+.hero-space {
+    position: relative;
+    width: 100%;
+    min-height: 70vh; /* Ketinggian yang seimbang untuk desktop & mobile */
+    background: url('images/bg-hero.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Lapisan Gelap Gelap lutsinar di atas gambar */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(9, 5, 20, 0.65); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Hiasan WELCOME TO MY SPACE + Garisan Kiri Kanan */
+.welcome-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.welcome-line .line {
+    width: 40px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.welcome-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+/* Tajuk Utama Besar */
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 10px 0;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+/* Teks Petikan / Quote */
+.hero-quote {
+    font-size: 1.15rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.highlight-purple {
+    color: var(--purple-neon);
+    font-weight: 600;
+}
+
+/* ANIMASI LAMBAIAN TANGAN (WAVING HAND) */
+.wave-emoji {
+    display: inline-block;
+    animation: waveAnimation 2.5s infinite;
+    transform-origin: 70% 70%;
+}
+
+@keyframes waveAnimation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) } 
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) } 
+  100% { transform: rotate( 0.0deg) }
+}
+
+/* --- 4. REKA BENTUK HALAMAN ABOUT (KAD LENGCUK MODEN) --- */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -111,7 +215,7 @@ body {
 .about-section {
     background: var(--card-bg);
     padding: 50px 40px;
-    border-radius: 24px; /* Lengkungan lebih besar dan lembut */
+    border-radius: 24px; 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
@@ -131,7 +235,7 @@ body {
     width: 150px;
     height: 150px;
     object-fit: cover;
-    border-radius: 30px; /* Tukar dari bulat ke bentuk squircle/kotak melengkung */
+    border-radius: 30px; 
     border: 3px solid var(--purple-neon);
     box-shadow: 0 0 25px rgba(217, 70, 239, 0.4);
     margin: 25px auto;
@@ -140,7 +244,7 @@ body {
 }
 
 .profile-img:hover {
-    transform: rotate(5deg) scale(1.05); /* Gambar berpusing sikit bila hover */
+    transform: rotate(5deg) scale(1.05); 
 }
 
 .about-text p {
@@ -150,7 +254,7 @@ body {
     font-size: 1.05rem;
 }
 
-/* --- 4. GRID KAD BLOG DENGAN EFFECT BORDER PURPLE GLOW --- */
+/* --- 5. GRID KAD BLOG DENGAN EFFECT BORDER PURPLE GLOW --- */
 .content-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -172,7 +276,6 @@ body {
 .card:nth-child(2) { animation-delay: 0.15s; }
 .card:nth-child(3) { animation-delay: 0.3s; }
 
-/* 4.1 ANIMASI KAD HOVER (UNGU GLOW) */
 .card:hover {
     transform: translateY(-6px);
     background: rgba(38, 22, 66, 0.6);
@@ -211,7 +314,7 @@ body {
     color: var(--purple-neon);
 }
 
-/* --- 5. BORANG CONTACT MINIMALIS --- */
+/* --- 6. BORANG CONTACT MINIMALIS --- */
 .contact-form {
     background: var(--card-bg);
     padding: 40px;
@@ -277,7 +380,7 @@ body {
     filter: brightness(1.1);
 }
 
-/* --- 6. MEDIA QUERY (Untuk Laptop / Skrin Besar) --- */
+/* --- 7. MEDIA QUERY (Untuk Laptop / Skrin Besar & Responsif) --- */
 @media (min-width: 768px) {
     .navbar {
         flex-direction: row;
@@ -306,5 +409,21 @@ body {
 
     .content-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Penyesuaian Saiz Skrin Telefon untuk Hero Space */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .hero-subtitle {
+        font-size: 1.05rem;
+    }
+    .hero-quote {
+        font-size: 1rem;
+    }
+    .welcome-line .line {
+        width: 25px;
     }
 }
