@@ -1073,29 +1073,3 @@ body {
         flex-direction: column;
     }
 }
-.social-icons {
-    display: flex;
-    gap: 15px; /* Jarak antara setiap ikon */
-    margin-top: 20px;
-}
-
-.social-icons a {
-    background-color: #1e192c; /* Warna latar belakang bulat */
-    color: #a78bfa; /* Warna ikon */
-    width: 45px;
-    height: 45px;
-    border-radius: 50%; /* Membentuk bulatan */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 1.2rem;
-}
-
-/* Kesan apabila tetikus menyentuh ikon */
-.social-icons a:hover {
-    background-color: #8b5cf6;
-    color: #ffffff;
-    transform: translateY(-3px);
-}
