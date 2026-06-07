@@ -102,7 +102,10 @@ body {
     position: relative;
     width: 100%;
     min-height: 70vh; /* Ketinggian yang seimbang untuk desktop & mobile */
-    background: url('images/bg-hero.jpg') no-repeat center center/cover;
+    
+    /* DIBAIKI: Nama fail ditukar kepada background.jpg mengikut fail anda */
+    background: url('background.jpg') no-repeat center center/cover;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -187,17 +190,6 @@ body {
     display: inline-block;
     animation: waveAnimation 2.5s infinite;
     transform-origin: 70% 70%;
-}
-
-@keyframes waveAnimation {
-    0% { transform: rotate( 0.0deg) }
-   10% { transform: rotate(14.0deg) } 
-   20% { transform: rotate(-8.0deg) }
-   30% { transform: rotate(14.0deg) }
-   40% { transform: rotate(-4.0deg) }
-   50% { transform: rotate(10.0deg) }
-   60% { transform: rotate( 0.0deg) } 
-  100% { transform: rotate( 0.0deg) }
 }
 
 /* --- 4. REKA BENTUK HALAMAN ABOUT (KAD LENGCUK MODEN) --- */
