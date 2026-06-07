@@ -10,7 +10,7 @@
 
     <!-- Menu Navigasi -->
     <nav class="navbar">
-        <div class="logo">MyBlog</div>
+        <div class="logo">Anis Elyana Blog</div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -26,10 +26,9 @@
         <!-- GRID 3 KAD PROJEK -->
         <section class="blog-grid">
             
-            <!-- KAD PROJEK 1 -->
+            <!-- KAD PROJEK 1 (GAMBAR BUKTI) -->
             <div class="blog-card">
                 <div class="blog-img-container">
-                    <!-- Gambar Depan Kad -->
                     <img src="gambar-ar.png" alt="AR IsyaratKu" class="blog-project-img">
                 </div>
                 <div class="blog-card-content">
@@ -37,15 +36,13 @@
                     <h3 class="project-title">AR IsyaratKu</h3>
                     <p class="project-desc">An educational Augmented Reality application designed to help users learn sign language through interactive 3D experiences.</p>
                     
-                    <!-- DIKEMAS KINI: data-evidence diletakkan nama fail gambar bukti berbeza (bukti-ar.png) -->
-                    <button onclick="openModal(this)" data-title="AR IsyaratKu - Gambar Bukti" data-evidence="bukti AR.png" class="project-btn">Read More &rarr;</button>
+                    <button onclick="openModal(this)" data-title="AR IsyaratKu - Evidence Image" data-evidence="bukti AR.png" class="project-btn">Read More &rarr;</button>
                 </div>
             </div>
 
-            <!-- KAD PROJEK 2 -->
+            <!-- KAD PROJEK 2 (VIDEO ANIMASI 3D) -->
             <div class="blog-card">
                 <div class="blog-img-container">
-                    <!-- Gambar Depan Kad -->
                     <img src="gambar-3d.jpg" alt="3D Room Transformation Animation" class="blog-project-img">
                 </div>
                 <div class="blog-card-content">
@@ -53,15 +50,14 @@
                     <h3 class="project-title">3D Room Transformation Animation</h3>
                     <p class="project-desc">A messy room is transformed into a clean, organized, and attractive space using 3D animation techniques.</p>
                     
-                    <!-- DIKEMAS KINI: data-evidence diletakkan nama fail gambar bukti berbeza (bukti-3d.jpg) -->
-                    <button onclick="openModal(this)" data-title="3D Room Transformation - Gambar Bukti" data-evidence="bukti 3D.png" class="project-btn">Read More &rarr;</button>
+<!-- NOTA ANIS: Pautan telah ditukar kepada format /embed/ supaya tidak menyekat sambungan browser -->
+<button onclick="openModal(this)" data-title="3D Room Transformation - Video Demo" data-evidence="https://www.youtube.com/embed/bRi2RkTkR80" class="project-btn">Read More &rarr;</button>
                 </div>
             </div>
 
-            <!-- KAD PROJEK 3 -->
+            <!-- KAD PROJEK 3 (VIDEO FLUFFYCONES) -->
             <div class="blog-card">
                 <div class="blog-img-container">
-                    <!-- Gambar Depan Kad -->
                     <img src="gambar-web.jpg" alt="FluffyCones Website" class="blog-project-img">
                 </div>
                 <div class="blog-card-content">
@@ -69,8 +65,8 @@
                     <h3 class="project-title">FluffyCones Website</h3>
                     <p class="project-desc">A business website developed for an ice cream company, focusing on user experience and digital marketing.</p>
                     
-                    <!-- DIKEMAS KINI: data-evidence diletakkan nama fail gambar bukti berbeza (bukti-web.jpg) -->
-                    <button onclick="openModal(this)" data-title="FluffyCones Website - Gambar Bukti" data-evidence="bukti-web.jpg" class="project-btn">Read More &rarr;</button>
+                    <!-- NOTA ANIS: Jika Anis ada fail video sendiri dalam folder, letak nama fail seperti: data-evidence="video-fluffy.mp4" -->
+                    <button onclick="openModal(this)" data-title="FluffyCones Website - Video Walkthrough" data-evidence="video fluffycones.mp4" class="project-btn">Read More &rarr;</button>
                 </div>
             </div>
 
@@ -78,27 +74,68 @@
     </main>
 
     <!-- ==========================================
-         STRUKTUR POPUP MODAL (TERSEMBUNYI SECARA DEFAULT)
+         STRUKTUR POPUP MODAL PINTAR (SOPORT GAMBAR & VIDEO)
          ========================================== -->
     <div id="evidenceModal" class="modal-overlay" onclick="closeModalOutside(event)">
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal()">&times;</span>
-            <h3 id="modalTitle" class="modal-title">Gambar Bukti</h3>
+            <h3 id="modalTitle" class="modal-title">Bukti Projek</h3>
             <div class="modal-body">
-                <img id="modalImg" src="" alt="Bukti Projek" class="modal-evidence-img">
+                
+                <!-- Slot 1: Untuk Paparan Gambar -->
+                <img id="modalImg" src="" alt="Bukti Projek" class="modal-evidence-img" style="display: none;">
+                
+                <!-- Slot 2: Untuk Fail Video Tempatan (.mp4) -->
+                <video id="modalVideo" controls class="modal-evidence-video" style="display: none; width: 100%; border-radius: 10px;"></video>
+                
+                <!-- Slot 3: Untuk Link Video Online (YouTube Embed / Drive Embed) -->
+                <iframe id="modalIframe" class="modal-evidence-iframe" style="display: none; width: 100%; height: 350px; border: none; border-radius: 10px;" allowfullscreen></iframe>
+                
             </div>
         </div>
     </div>
 
-    <!-- KOD JAVASCRIPT UNTUK KAWALAN POPUP -->
+   <!-- KOD JAVASCRIPT PINTAR (PENGESAN MEDIA - EDISI BEBAS RALAT) -->
     <script>
     function openModal(button) {
         var title = button.getAttribute('data-title');
         var evidenceSrc = button.getAttribute('data-evidence');
         
         document.getElementById('modalTitle').innerText = title;
-        document.getElementById('modalImg').src = evidenceSrc;
         
+        var imgSlot = document.getElementById('modalImg');
+        var videoSlot = document.getElementById('modalVideo');
+        var iframeSlot = document.getElementById('modalIframe');
+        
+        // Sembunyikan semua slot terlebih dahulu untuk "reset" popup
+        imgSlot.style.display = "none";
+        videoSlot.style.display = "none";
+        iframeSlot.style.display = "none";
+        
+        // Hentikan sebarang fail video tempatan (.mp4)
+        videoSlot.src = "";
+        
+        // Selesai Isu: Kita buang terus atribut src asal berbanding set src="" untuk elak Error 153
+        iframeSlot.removeAttribute('src');
+
+        // PENGESAN 1: Jika pautan mengandungi 'youtube.com', 'youtu.be', 'drive.google' atau 'http' (kecuali fail .mp4)
+        if ((evidenceSrc.includes('http') || evidenceSrc.includes('www')) && !evidenceSrc.endsWith('.mp4')) {
+            iframeSlot.setAttribute('src', evidenceSrc); // Masukkan link secara bersih
+            iframeSlot.style.display = "block";
+        } 
+        // PENGESAN 2: Jika fail adalah video tempatan seperti .mp4, .webm atau .ogg
+        else if (evidenceSrc.endsWith('.mp4') || evidenceSrc.endsWith('.webm') || evidenceSrc.endsWith('.ogg')) {
+            videoSlot.src = evidenceSrc;
+            videoSlot.style.display = "block";
+            videoSlot.load(); // Muat video baharu
+        } 
+        // PENGESAN 3: Jika selain di atas, kita anggap ia adalah Gambar (.jpg, .png, etc.)
+        else {
+            imgSlot.src = evidenceSrc;
+            imgSlot.style.display = "block";
+        }
+        
+        // Paparkan modal kontainer
         document.getElementById('evidenceModal').classList.add('active');
         document.body.style.overflow = 'hidden';
     }
@@ -106,6 +143,14 @@
     function closeModal() {
         document.getElementById('evidenceModal').classList.remove('active');
         document.body.style.overflow = 'auto';
+        
+        // Padamkan video tempatan
+        document.getElementById('modalVideo').src = "";
+        
+        // Selesai Isu: "Bunuh" sesi iframe YouTube sepenuhnya semasa ditutup tanpa merosakkan sistem pemainnya
+        var iframeSlot = document.getElementById('modalIframe');
+        iframeSlot.style.display = "none";
+        iframeSlot.removeAttribute('src'); 
     }
 
     function closeModalOutside(event) {
@@ -114,6 +159,3 @@
         }
     }
     </script>
-
-</body>
-</html>

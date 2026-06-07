@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me | Personal Blog</title>
+    <!-- Sambungkan ke fail CSS utama Anis -->
     <link rel="stylesheet" href="style.css">
+    <!-- Menggunakan Font Awesome untuk ikon emel, telefon, dan butang hantar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- Menu Navigasi -->
     <nav class="navbar">
-        <div class="logo">MyBlog</div>
+        <div class="logo">Anis Elyana Blog</div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -18,26 +22,85 @@
         </ul>
     </nav>
 
-    <main class="container">
-        <h2>Hubungi Saya</h2>
-        <p>Sila isi borang di bawah jika anda mempunyai sebarang pertanyaan.</p>
+        <!-- ==========================================
+             KANDUNGAN UTAMA (HALAMAN CONTACT ME)
+             ========================================== -->
+        <main class="main-content">
+            <h1 class="page-title-contact">Contact Me</h1>
+            
+            <div class="contact-container">
+                <!-- KIRI: Kad Maklumat Perhubungan -->
+                <div class="contact-info-section">
+                    
+                  <!-- KAD EMAIL (DIFUNGSIKAN DENGAN MAILTO) -->
+<div class="info-card">
+    <div class="info-icon-box">
+        <i class="fas fa-envelope"></i>
+    </div>
+    <div class="info-text">
+        <span>EMAIL</span>
+        <p>
+            <a href="mailto:anisn3823@gmail.com" style="color: #ffffff; text-decoration: underline;">
+                anisn3823@gmail.com
+            </a>
+        </p>
+    </div>
+</div>
 
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="name">Nama:</label>
-                <input type="text" id="name" placeholder="Masukkan nama anda" required>
+                    <!-- KAD GITHUB (DITUKAR KEPADA PAUTAN BOLEH KLIK) -->
+<div class="info-card">
+    <div class="info-icon-box">
+        <i class="fab fa-github"></i> <!-- Ikon GitHub -->
+    </div>
+    <div class="info-text">
+        <span>GITHUB</span>
+        <p>
+            <a href="https://github.com/Aniselyana/Aniselyana_blog_portfolio" target="_blank" style="color: #ffffff; text-decoration: underline;">
+                https://github.com/Aniselyana/Aniselyana_blog_portfolio
+            </a>
+        </p>
+    </div>
+</div>
+
+                    <!-- Kad No Telefon -->
+                    <div class="info-card">
+                        <div class="info-icon-box">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <span>PHONE NUMBER</span>
+                            <p>+60 13-3667229</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- KANAN: Borang Hantar Mesej -->
+                <div class="contact-form-section">
+                    <h3><i class="fas fa-paper-plane" style="transform: rotate(45deg); margin-right: 8px;"></i> Send a Message</h3>
+                    
+                    <form action="#" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">E-mel:</label>
-                <input type="email" id="email" placeholder="Masukkan e-mel anda" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Mesej:</label>
-                <textarea id="message" rows="5" placeholder="Tulis mesej anda di sini..." required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Hantar Mesej</button>
-        </form>
-    </main>
+        </main>
+    </div>
 
 </body>
 </html>

@@ -868,3 +868,234 @@ body {
     color: var(--purple-glow, #a855f7);
     transform: translateX(3px);
 }
+/* 1. Mengehadkan saiz maksimum kotak modal supaya tidak terlalu besar/lebar */
+.modal-content {
+    max-width: 650px;       /* Mengehadkan lebar kotak modal */
+    width: 90%;             /* Supaya responsive pada skrin phone */
+    max-height: 85vh;       /* Mengehadkan tinggi modal agar tidak terkeluar skrin */
+    overflow-y: auto;       /* Jika kandungan panjang, ia akan buat scroll dalam modal sahaja */
+    border-radius: 12px;
+    padding: 20px;
+}
+
+/* 2. Memastikan Gambar Bukti automatik mengikut saiz kotak modal & tidak "peta" */
+.modal-evidence-img {
+    width: 100%;            /* Lebar imej akan mengikut lebar kotak */
+    max-height: 400px;      /* Mengehadkan tinggi maksimum gambar (contohnya gambar aiskrim tadi) */
+    object-fit: contain;    /* Mengekalkan nisbah gambar supaya tidak penyek atau herot */
+    display: block;
+    margin: 0 auto;         /* Memastikan gambar duduk di tengah-tengah */
+}
+
+/* 3. Memastikan Video (Iframe & Video Tag) juga tidak terlalu besar */
+.modal-evidence-iframe, 
+.modal-evidence-video {
+    width: 100%;
+    height: 360px;          /* Ketinggian yang ideal untuk paparan video */
+    max-height: 70vh;
+}
+/* ==========================================================================
+   GAYA STRUKTUR HALAMAN CONTACT ME (PREMIUM DARK & PURPLE)
+   ========================================================================== */
+
+/* Pengurusan susun atur induk jika menggunakan sidebar */
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: #0b0713; /* Latar belakang gelap ungu misteri */
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+    background-color: #090510;
+}
+
+/* Tajuk Halaman */
+.page-title-contact {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.page-title-contact::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 40px;
+    height: 4px;
+    background-color: #8b5cf6; /* Garis ungu bawah tajuk */
+    border-radius: 2px;
+}
+
+/* Kotak Kontainer Utama (Grid Hubungan) */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Memisahkan 2 bahagian: Kiri dan Kanan */
+    gap: 30px;
+    margin-top: 20px;
+    max-width: 1200px;
+}
+
+/* --- BAHAGIAN KIRI: KAD MAKLUMAT --- */
+.contact-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    background-color: #130f1e; /* Warna kad gelap kelabu-ungu */
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    border-left: 4px solid #8b5cf6; /* Jalur ungu ikonik di sebelah kiri kad */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.info-icon-box {
+    background-color: #1e192c;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a78bfa;
+    font-size: 1.2rem;
+}
+
+.info-text span {
+    display: block;
+    font-size: 0.75rem;
+    color: #9ca3af;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.info-text p {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+    color: #ffffff;
+}
+
+/* --- BAHAGIAN KANAN: BORANG MESEJ --- */
+.contact-form-section {
+    background-color: #110d1a;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form-section h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #e5e7eb;
+}
+
+/* Reka Bentuk Input Tempat Letak Teks */
+.form-group input,
+.form-group textarea {
+    background-color: #171224;
+    border: 1px solid #2e2543;
+    border-radius: 8px;
+    padding: 14px 16px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #8b5cf6;
+    box-shadow: 0 0 8px rgba(139, 92, 246, 0.3);
+}
+
+/* Butang Hantar Mesej Ungu (Send Message) */
+.submit-btn {
+    background-color: #7c3aed; /* Ungu terang neon */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 28px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-start; /* Meletakkan butang di bahagian kiri bawah */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+.submit-btn:hover {
+    background-color: #6d28d9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
+}
+
+/* Responsif skrin sekiranya dibuka pada telefon bimbit */
+@media (max-width: 900px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    .app-layout {
+        flex-direction: column;
+    }
+}
+.social-icons {
+    display: flex;
+    gap: 15px; /* Jarak antara setiap ikon */
+    margin-top: 20px;
+}
+
+.social-icons a {
+    background-color: #1e192c; /* Warna latar belakang bulat */
+    color: #a78bfa; /* Warna ikon */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* Membentuk bulatan */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+/* Kesan apabila tetikus menyentuh ikon */
+.social-icons a:hover {
+    background-color: #8b5cf6;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
