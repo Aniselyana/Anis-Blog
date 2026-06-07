@@ -102,23 +102,23 @@ body {
     position: relative;
     width: 100%;
     min-height: 70vh; /* Ketinggian yang seimbang untuk desktop & mobile */
-    
-    /* DIBAIKI: Nama fail ditukar kepada background.jpg mengikut fail anda */
-    background: url('background.jpg') no-repeat center center/cover;
-    
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
-/* Lapisan Gelap Gelap lutsinar di atas gambar */
+/* Lapisan Gelap lutsinar + ADUNAN GAMBAR LATAR BELAKANG */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(9, 5, 20, 0.65); 
+    
+    /* DIBAIKI: Menggabungkan warna ungu cyber dan gambar background supaya tidak bertindih */
+    background: linear-gradient(rgba(9, 5, 20, 0.5), rgba(9, 5, 20, 0.7)), url('background.jpg') no-repeat center center/cover;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -130,6 +130,7 @@ body {
     text-align: center;
     max-width: 800px;
     animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+    z-index: 2; /* Memastikan teks sentiasa berada di atas gambar */
 }
 
 /* Hiasan WELCOME TO MY SPACE + Garisan Kiri Kanan */
