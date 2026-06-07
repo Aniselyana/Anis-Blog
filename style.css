@@ -1,18 +1,16 @@
-/* --- 1. SETTING UTAMA & WARNA (TEMA GLASSMORPHISM NEON) --- */
+/* --- 1. SETTING UTAMA & WARNA (TEMA CYBER PURPLE) --- */
 :root {
-    /* Warna tema yang lebih cerah dan bertenaga untuk animasi */
-    --primary-neon: #38bdf8;    /* Neon Cyan */
-    --secondary-neon: #a855f7;  /* Neon Purple */
-    --bg-start: #060918;        /* Biru gelap pekat bermula */
-    --bg-end: #1a1f3c;          /* Biru-ungu gelap berakhir */
-    --card-bg: rgba(30, 41, 59, 0.4); /* Gelas separa lutsinar */
-    --text-main: #f8fafc;       /* Putih bersih */
-    --text-muted: #94a3b8;      /* Kelabu lembut */
-    --accent-glow: rgba(56, 189, 248, 0.3); /* Cahaya neon */
+    --purple-neon: #d946ef;     /* Fuchsia / Neon Purple */
+    --purple-glow: #a855f7;     /* Bright Violet */
+    --bg-dark: #090514;         /* Ungu gelap pekat malam */
+    --bg-light-purple: #140b24; /* Ungu gelap sederhana */
+    --card-bg: rgba(26, 15, 46, 0.45); /* Gelas ungu separa lutsinar */
+    --text-main: #fcfaff;       /* Putih bersih dengan ton ungu lembut */
+    --text-muted: #c0b3d6;      /* Kelabu ungu lembut */
 }
 
-/* 1.1 ANIMASI LATAR BELAKANG BERGERAK */
-@keyframes backgroundFlow {
+/* 1.1 ANIMASI LATAR BELAKANG UNGU BERGERAK */
+@keyframes purpleFlow {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
@@ -22,13 +20,12 @@ body {
     font-family: 'Segoe UI', Roboto, sans-serif;
     margin: 0;
     padding: 0;
-    /* Latar belakang bergerak (Flowing Gradient) */
-    background: linear-gradient(135deg, var(--bg-start), #0c0f24, #1c133a, var(--bg-end));
+    background: linear-gradient(135deg, var(--bg-dark), #110722, #1d0b3a, var(--bg-light-purple));
     background-size: 300% 300%;
-    animation: backgroundFlow 20s ease infinite;
+    animation: purpleFlow 15s ease infinite;
     color: var(--text-main);
     line-height: 1.6;
-    overflow-x: hidden; /* Mengelakkan bar skrol melintang */
+    overflow-x: hidden;
 }
 
 .container {
@@ -37,17 +34,17 @@ body {
     margin: 0 auto;
 }
 
-/* --- 2. MENU NAVIGASI YANG ELEGAN & KABUR (STICKY GLASS) --- */
+/* --- 2. MENU NAVIGASI MINIMALIS UNGU --- */
 .navbar {
-    background-color: rgba(30, 41, 59, 0.6);
-    backdrop-filter: blur(15px); /* Efek gelas kabur lebih tebal */
-    -webkit-backdrop-filter: blur(15px); /* Sokongan untuk Safari */
+    background-color: rgba(17, 7, 34, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Garis halus untuk efek gelas */
+    border-bottom: 1px solid rgba(217, 70, 239, 0.15);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -57,28 +54,20 @@ body {
     font-size: 1.6rem;
     font-weight: 800;
     color: var(--text-main);
-    letter-spacing: 1px;
-    position: relative;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-/* 2.1 ANIMASI LOGO NEON (GLOW & PULSE) */
-.logo::after {
-    content: 'Anis Blog';
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: var(--primary-neon);
-    filter: blur(8px);
-    opacity: 0.8;
+/* Kesan titik neon ungu pada logo */
+.logo::sidebar, .logo::after {
+    content: '.';
+    color: var(--purple-neon);
+    animation: pulseGlow 2s infinite;
 }
 
-@keyframes logoPulse {
-    0%, 100% { opacity: 0.8; }
-    50% { opacity: 0.4; }
-}
-
-.logo::after {
-    animation: logoPulse 4s infinite ease-in-out;
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.3; text-shadow: none; }
+    50% { opacity: 1; text-shadow: 0 0 10px var(--purple-neon); }
 }
 
 .nav-links {
@@ -96,39 +85,22 @@ body {
     text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
-    transition: all 0.3s ease-in-out;
-    padding: 6px 14px;
-    border-radius: 6px;
-    position: relative;
-}
-
-/* 2.2 ANIMASI MENENTUKAN TAB AKTIF (UNDERLINE FLOW) */
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background: linear-gradient(90deg, var(--primary-neon), var(--secondary-neon));
-    transition: width 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 20px; /* Tukar jadi bentuk kapsul pill */
 }
 
 .nav-links a:hover {
     color: var(--text-main);
+    background: rgba(217, 70, 239, 0.15);
+    box-shadow: 0 0 15px rgba(217, 70, 239, 0.2);
 }
 
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-/* --- 3. REKA BENTUK HALAMAN ABOUT & KANDUNGAN (KAD GLASS) --- */
-
-/* 3.1 ANIMASI MASUK KAD ABOUT (FADE-IN & SLIDE-UP) */
-@keyframes slideInUp {
+/* --- 3. REKA BENTUK HALAMAN ABOUT (KAD LENGCUK MODEN) --- */
+@keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(40px);
     }
     to {
         opacity: 1;
@@ -139,14 +111,13 @@ body {
 .about-section {
     background: var(--card-bg);
     padding: 50px 40px;
-    border-radius: 20px;
-    backdrop-filter: blur(5px); /* Kesan gelas kabur pada kad */
-    -webkit-backdrop-filter: blur(5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 24px; /* Lengkungan lebih besar dan lembut */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(217, 70, 239, 0.1);
     text-align: center;
-    /* Animasi apabila halaman dimuat semula */
-    animation: slideInUp 0.8s ease-out both;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .about-section h2 {
@@ -154,48 +125,32 @@ body {
     font-size: 2.2rem;
     margin-top: 0;
     margin-bottom: 25px;
-    position: relative;
-    display: inline-block;
-}
-
-/* Garis bawah tajuk Neon */
-.about-section h2::after {
-    content: '';
-    position: absolute;
-    width: 60%;
-    height: 3px;
-    bottom: -5px;
-    left: 20%;
-    background: linear-gradient(90deg, var(--primary-neon), var(--secondary-neon));
-    border-radius: 2px;
 }
 
 .profile-img {
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
-    border-radius: 50%;
-    /* Garis neon dwi-warna */
-    border: 4px solid var(--primary-neon);
-    box-shadow: 0 0 25px rgba(56, 189, 248, 0.5), 0 0 15px rgba(168, 85, 247, 0.4);
+    border-radius: 30px; /* Tukar dari bulat ke bentuk squircle/kotak melengkung */
+    border: 3px solid var(--purple-neon);
+    box-shadow: 0 0 25px rgba(217, 70, 239, 0.4);
     margin: 25px auto;
     display: block;
-    /* Animasi pulsa cahaya */
-    animation: profileGlowPulse 6s infinite ease-in-out;
+    transition: transform 0.5s ease;
 }
 
-@keyframes profileGlowPulse {
-    0%, 100% { box-shadow: 0 0 25px rgba(56, 189, 248, 0.5), 0 0 15px rgba(168, 85, 247, 0.4); }
-    50% { box-shadow: 0 0 45px rgba(56, 189, 248, 0.8), 0 0 25px rgba(168, 85, 247, 0.6); }
+.profile-img:hover {
+    transform: rotate(5deg) scale(1.05); /* Gambar berpusing sikit bila hover */
 }
 
 .about-text p {
     color: var(--text-muted);
     max-width: 700px;
     margin: 15px auto;
+    font-size: 1.05rem;
 }
 
-/* --- 4. GRID BLOG YANG EMPHASIS & ANIMASI KAD --- */
+/* --- 4. GRID KAD BLOG DENGAN EFFECT BORDER PURPLE GLOW --- */
 .content-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -206,35 +161,35 @@ body {
 .card {
     background: var(--card-bg);
     padding: 30px;
-    border-radius: 16px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.03);
-    /* Transisi kelancaran untuk animasi hover */
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.3s ease;
-    /* Animasi masuk kad-kad blog secara berturut-turut (STAGGERED) */
-    animation: slideInUp 0.8s ease-out both;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* Animasi masuk tertunda untuk kad kedua & ketiga */
-.card:nth-child(2) { animation-delay: 0.2s; }
-.card:nth-child(3) { animation-delay: 0.4s; }
+.card:nth-child(2) { animation-delay: 0.15s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
 
-/* 4.1 ANIMASI KAD BLOG (HOVER EFFECT & GLOW) */
+/* 4.1 ANIMASI KAD HOVER (UNGU GLOW) */
 .card:hover {
-    transform: translateY(-8px) scale(1.01); /* Naik ke atas & besarkan sedikit */
-    box-shadow: 0 20px 40px rgba(56, 189, 248, 0.2), 0 0 15px rgba(168, 85, 247, 0.1);
-    border-color: rgba(56, 189, 248, 0.3); /* Tambahkan cahaya neon pada bingkai */
+    transform: translateY(-6px);
+    background: rgba(38, 22, 66, 0.6);
+    border-color: var(--purple-neon);
+    box-shadow: 0 15px 30px rgba(168, 85, 247, 0.25);
 }
 
 .blog-date {
     font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--secondary-neon); /* Tarikh guna warna neon kedua */
+    font-weight: 600;
+    color: var(--purple-neon);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .card h3 {
-    margin: 10px 0;
+    margin: 12px 0;
     color: var(--text-main);
     font-size: 1.4rem;
 }
@@ -244,45 +199,30 @@ body {
 }
 
 .card a {
-    color: var(--primary-neon);
+    color: var(--purple-glow);
     text-decoration: none;
     font-weight: bold;
     display: inline-block;
     margin-top: 15px;
-    position: relative;
-    padding-bottom: 2px;
+    transition: color 0.3s ease;
 }
 
-/* Animasi pautan "Baca Lanjut" */
-.card a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--primary-neon);
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
+.card a:hover {
+    color: var(--purple-neon);
 }
 
-.card a:hover::after {
-    opacity: 1;
-}
-
-/* --- 5. GAYA BORANG CONTACT YANG PRO & ANIMASI BUTTON --- */
+/* --- 5. BORANG CONTACT MINIMALIS --- */
 .contact-form {
     background: var(--card-bg);
     padding: 40px;
-    border-radius: 20px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(217, 70, 239, 0.1);
     max-width: 500px;
     margin: 40px auto 0 auto;
-    /* Animasi masuk borang contact */
-    animation: slideInUp 0.8s ease-out both;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .form-group {
@@ -295,14 +235,14 @@ body {
     margin-bottom: 10px;
     font-size: 0.9rem;
     color: var(--text-main);
-    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .form-group input, .form-group textarea {
     padding: 14px;
-    background: rgba(15, 23, 42, 0.7); /* Latar belakang input lebih gelap */
+    background: rgba(13, 7, 24, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
+    border-radius: 12px;
     font-size: 1rem;
     color: var(--text-main);
     width: 100%;
@@ -310,42 +250,31 @@ body {
     transition: all 0.3s ease;
 }
 
-/* 5.1 ANIMASI INPUT (FOCUS EFFECTS & GLOW) */
 .form-group input:focus, .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-neon);
-    box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
-    background: rgba(15, 23, 42, 0.9);
+    border-color: var(--purple-neon);
+    box-shadow: 0 0 12px rgba(217, 70, 239, 0.3);
 }
 
 .submit-btn {
-    /* Gradien neon untuk butang */
-    background: linear-gradient(135deg, #0284c7, var(--primary-neon), #67e8f9);
-    background-size: 200% auto; /* Untuk animasi gradien */
+    background: linear-gradient(135deg, #7c3aed, var(--purple-neon));
     color: white;
     padding: 16px;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 1rem;
     font-weight: bold;
-    text-transform: uppercase;
     letter-spacing: 1px;
     width: 100%;
-    box-shadow: 0 4px 20px rgba(2, 132, 199, 0.4);
-    /* Transisi kelancaran animasi */
-    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+    transition: all 0.3s ease;
 }
 
-/* 5.2 ANIMASI BUTANG (HOVER EFFECT & GLOW) */
 .submit-btn:hover {
-    transform: scale(1.03); /* Besarkan butang sedikit */
-    box-shadow: 0 6px 25px rgba(56, 189, 248, 0.6), 0 0 15px rgba(168, 85, 247, 0.3);
-    background-position: right center; /* Gerakkan gradien ke kanan */
-}
-
-.submit-btn:active {
-    transform: scale(1); /* Kembalikan saiz apabila butang ditekan */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(217, 70, 239, 0.5);
+    filter: brightness(1.1);
 }
 
 /* --- 6. MEDIA QUERY (Untuk Laptop / Skrin Besar) --- */
@@ -353,12 +282,12 @@ body {
     .navbar {
         flex-direction: row;
         justify-content: space-between;
-        padding: 20px 50px;
+        padding: 20px 60px;
     }
 
     .nav-links {
         flex-direction: row;
-        gap: 20px;
+        gap: 15px;
     }
 
     .about-section {
@@ -371,11 +300,11 @@ body {
 
     .profile-img {
         margin: 0;
-        width: 180px;
-        height: 180px;
+        width: 170px;
+        height: 170px;
     }
 
     .content-grid {
-        grid-template-columns: repeat(2, 1fr); /* Susun 2 kolum */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
