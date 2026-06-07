@@ -5,8 +5,8 @@
     --bg-dark: #090514;         /* Ungu gelap pekat malam */
     --bg-light-purple: #140b24; /* Ungu gelap sederhana */
     --card-bg: rgba(26, 15, 46, 0.45); /* Gelas ungu separa lutsinar */
-    --text-main: #fcfaff;       /* Putih bersih dengan ton ungu lembut */
-    --text-muted: #c0b3d6;      /* Kelabu ungu lembut */
+    --text-main: #d8d4dd;       /* Putih bersih dengan ton ungu lembut */
+    --text-muted: #e9e6ed;      /* Kelabu ungu lembut */
 }
 
 /* 1.1 ANIMASI LATAR BELAKANG UNGU BERGERAK */
@@ -20,7 +20,7 @@ body {
     font-family: 'Segoe UI', Roboto, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, var(--bg-dark), #110722, #1d0b3a, var(--bg-light-purple));
+    background: linear-gradient(135deg, var(--bg-dark), #6b568f, #1d0b3a, var(--bg-light-purple));
     background-size: 300% 300%;
     animation: purpleFlow 15s ease infinite;
     color: var(--text-main);
@@ -902,7 +902,7 @@ body {
 .app-layout {
     display: flex;
     min-height: 100vh;
-    background-color: #0b0713; /* Latar belakang gelap ungu misteri */
+    background-color: #5c4b7c; /* Latar belakang gelap ungu misteri */
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -910,7 +910,8 @@ body {
 .main-content {
     flex: 1;
     padding: 40px;
-    background-color: #090510;
+        background: linear-gradient(135deg, var(--bg-dark), #6b568f, );
+
 }
 
 /* Tajuk Halaman */
@@ -950,7 +951,7 @@ body {
 }
 
 .info-card {
-    background-color: #130f1e; /* Warna kad gelap kelabu-ungu */
+    background-color: #6b568f; /* Warna kad gelap kelabu-ungu */
     border-radius: 12px;
     padding: 20px;
     display: flex;
@@ -991,7 +992,7 @@ body {
 
 /* --- BAHAGIAN KANAN: BORANG MESEJ --- */
 .contact-form-section {
-    background-color: #110d1a;
+    background-color: #6b568f;
     border-radius: 16px;
     padding: 30px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -1064,12 +1065,19 @@ body {
     box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
 }
 
-/* Responsif skrin sekiranya dibuka pada telefon bimbit */
-@media (max-width: 900px) {
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-    .app-layout {
-        flex-direction: column;
-    }
+/* Gaya asas untuk semua pautan navbar */
+.navbar a {
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 20px; /* Bentuk bujur untuk semua */
+    text-decoration: none;
 }
+
+/* Kesan apabila tetikus menyentuh (hover) mana-mana butang */
+.navbar a:hover {
+    background-color: #4c1d95; /* Warna ungu bila disentuh */
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.5); /* Kesan cahaya */
+    transform: translateY(-2px); /* Butang naik sedikit */
+}
+
