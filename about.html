@@ -1,51 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | My GitHub Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>About Me | Personal Blog</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">&lt;Dev<span>Me</span> /&gt;</div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class="logo">MyBlog</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
     <main class="container">
-        <div class="title-center">
-            <h2>// 01. About Me</h2>
-            <div class="line"></div>
-        </div>
-        <div class="about-content">
-            <div class="about-bio">
-                <p>Hello! I'm currently working on my <strong>CSD 34203 Special Topics in Software Development</strong> assignment. I enjoy learning how backend logic interacts with clean, modern frontend design.</p>
-                <p>This project is part of my GitHub portfolio where I apply my project management, version control, and problem-solving skills independently.</p>
-            </div>
-            <div class="about-tech">
-                <h3>Technologies I Use:</h3>
-                <ul class="tech-list">
-                    <li>✦ HTML5 & CSS3</li>
-                    <li>✦ JavaScript</li>
-                    <li>✦ Git & GitHub</li>
-                    <li>✦ VS Code</li>
-                </ul>
-            </div>
-        </div>
+        <section class="about-section">
+            <h2>Mengenai Saya</h2>
+            <!-- Anda boleh masukkan gambar anda dalam folder images/ -->
+            <img src="images/profile.jpg" alt="Gambar Profil Saya" class="profile-img">
+            <p>Hai! Nama saya [Nama Anda]. Saya merupakan pelajar Fakulti Informatik dan Komputer (FIK) di UniSZA.</p>
+            <p>Blog ini dibina sebagai tugasan individu bagi subjek CSD 34203 Special Topics in Software Development.</p>
+        </section>
     </main>
-
-    <footer>
-        <p>&copy; 2026 Personal Blog Portfolio. Formatted for CSD34203 Submission.</p>
-    </footer>
 
 </body>
 </html>

@@ -1,48 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blog | My GitHub Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>My Blog Posts</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">&lt;Dev<span>Me</span> /&gt;</div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="blog.html" class="active">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class="logo">MyBlog</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
     <main class="container">
-        <div class="title-center">
-            <h2>// 02. Latest Snippets</h2>
-            <div class="line"></div>
-        </div>
-        <div class="grid-blog">
-            <article class="post-card">
-                <div class="post-header">⚡ Course Journey</div>
-                <h3>My Experience at FIK UniSZA</h3>
-                <p>Diving deep into modern software architecture. From writing basic syntax to deploying live websites, the learning curve is rewarding!</p>
+        <h2>Koleksi Artikel Blog</h2>
+        
+        <!-- Menggunakan class content-grid yang responsive -->
+        <div class="content-grid">
+            <article class="card">
+                <span class="blog-date">7 Jun 2026</span>
+                <h3>Post 1: Pengalaman Belajar Web Development</h3>
+                <p>Belajar HTML, CSS, dan JavaScript sangat menyeronokkan. Bermula dengan perkara asas sehinggalah membina laman web yang responsive...</p>
+                <a href="#">Baca Lanjut &rarr;</a>
             </article>
-            <article class="post-card">
-                <div class="post-header">📦 Git Workflow</div>
-                <h3>Why Meaningful Commits Matter</h3>
-                <p>Using proper commit messages like 'Added blog layout' helps maintain a clean project history and shows good planning skills.</p>
+
+            <article class="card">
+                <span class="blog-date">6 Jun 2026</span>
+                <h3>Post 2: Kepentingan Membina Portfolio GitHub</h3>
+                <p>Mempunyai portfolio di GitHub membolehkan bakal majikan melihat hasil kerja dan kemahiran pengaturcaraan kita secara telus...</p>
+                <a href="#">Baca Lanjut &rarr;</a>
+            </article>
+
+            <article class="card">
+                <span class="blog-date">5 Jun 2026</span>
+                <h3>Post 3: Tips Pengurusan Masa Sebagai Pelajar</h3>
+                <p>Bahagikan masa antara kuliah, tugasan projek, dan rehat dengan baik bagi mengelakkan tekanan di saat-saat akhir tugasan perlu dihantar...</p>
+                <a href="#">Baca Lanjut &rarr;</a>
             </article>
         </div>
     </main>
-
-    <footer>
-        <p>&copy; 2026 Personal Blog Portfolio. Formatted for CSD34203 Submission.</p>
-    </footer>
 
 </body>
 </html>

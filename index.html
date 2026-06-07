@@ -1,38 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
     <meta charset="UTF-8">
+    <!-- TAG WAJIB UNTUK RESPONSIVE MOBILE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | My GitHub Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Personal Blog | Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">&lt;Dev<span>Me</span> /&gt;</div>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="resume.html">Resume</a></li> <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Menu Navigasi -->
+    <nav class="navbar">
+        <div class="logo">MyBlog</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-    <main class="hero">
-        <div class="hero-box">
-            <div class="terminal-text">system.init(): Success</div>
-            <h1>Building Digital Experiences</h1>
-            <p>Hi, I am a Software Development student at Faculty of Informatics and Computing (FIK), UniSZA. Welcome to my personal blog portfolio project.</p>
-            <a href="about.html" class="cta-btn">Explore Portfolio</a>
-        </div>
+    <!-- Kandungan Utama -->
+    <main class="container">
+        <header class="hero">
+            <h1>Selamat Datang ke Blog Saya</h1>
+            <p>Ini adalah tugasan projek individu GitHub saya untuk UniSZA.</p>
+        </header>
+
+        <section class="content-grid">
+            <div class="card">
+                <h3>Artikel Terbaru 1</h3>
+                <p>Ringkasan artikel pertama di sini...</p>
+            </div>
+            <div class="card">
+                <h3>Artikel Terbaru 2</h3>
+                <p>Ringkasan artikel kedua di sini...</p>
+            </div>
+        </section>
     </main>
-
-    <footer>
-        <p>&copy; 2026 Personal Blog Portfolio. Formatted for CSD34203 Submission.</p>
-    </footer>
 
 </body>
 </html>
