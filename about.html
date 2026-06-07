@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | Personal Blog</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Menggunakan Font Awesome untuk ikon kad kemahiran -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- Menu Navigasi -->
     <nav class="navbar">
         <div class="logo">MyBlog</div>
         <ul class="nav-links">
@@ -19,13 +22,41 @@
     </nav>
 
     <main class="container">
-        <section class="about-section">
-            <h2>Mengenai Saya</h2>
-            <!-- Anda boleh masukkan gambar anda dalam folder images/ -->
-            <img src="images/profile.jpg" alt="Gambar Profil Saya" class="profile-img">
-            <p>Hai! Nama saya [Nama Anda]. Saya merupakan pelajar Fakulti Informatik dan Komputer (FIK) di UniSZA.</p>
-            <p>Blog ini dibina sebagai tugasan individu bagi subjek CSD 34203 Special Topics in Software Development.</p>
+        <!-- Tajuk Halaman -->
+        <h1 class="page-title">About Me</h1>
+
+        <!-- KAD UTAMA: BIOGRAFI + GAMBAR PROFIL -->
+        <section class="about-main-card">
+            <img src="profile.jpeg" alt="Gambar Profil Anis" class="about-profile-img">
+            
+            <div class="about-bio-text">
+                <p>My name is <span class="highlight-purple">Nurul Anis Elyana Binti Sahiron</span>. I am a student of Bachelor of Information Technology (Media Informatics). I am interested in web development, multimedia, and augmented reality (AR) technology.</p>
+                <p>I enjoy learning new skills in programming, UI design, and software development. I am a hardworking and creative person who likes to explore new ideas and improve my technical skills for future career opportunities.</p>
+            </div>
         </section>
+
+        <!-- GRID KAD KECIL: KEMAHIRAN (SKILLS) -->
+        <div class="skills-grid">
+            
+            <!-- Kad 1: Development & Multimedia -->
+            <div class="skill-card border-left-glow">
+                <div class="skill-header">
+                    <i class="fa-solid fa-cubes skill-icon"></i>
+                    <h3>Development & Multimedia</h3>
+                </div>
+                <p>Experience using Unity, Vuforia, Maya, Blender, Adobe Animate, and Canva for creating interactive, 3D assets, and multimedia experiences.</p>
+            </div>
+
+            <!-- Kad 2: Web & Source Control -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <i class="fa-solid fa-code skill-icon"></i>
+                    <h3>Web & Source Control</h3>
+                </div>
+                <p>Proficient in foundational web technologies including HTML, CSS, and JavaScript, alongside Version Control using GitHub for academic projects.</p>
+            </div>
+
+        </div>
     </main>
 
 </body>
