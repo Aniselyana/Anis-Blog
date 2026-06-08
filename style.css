@@ -1159,3 +1159,12 @@ body {
     color: var(--text-color);
     transition: 0.3s; /* Supaya pertukaran nampak lembut */
 }
+#typewriter::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+    color: var(--purple-neon);
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}

@@ -1,28 +1,30 @@
-// 1. Dapatkan rujukan elemen
-const toggleButton = document.getElementById('theme-toggle');
-const themeIcon = document.getElementById('theme-icon');
+// Typewriter Effect
+const typewriter = document.getElementById('typewriter');
+const texts = ["Nurul Anis Elyana", "a Web Developer", "a Tech Enthusiast"];
+let textIndex = 0;
+let charIndex = 0;
 
-// 2. Semak tema yang disimpan dalam localStorage
-const savedTheme = localStorage.getItem('theme') || 'dark'; // Default kepada dark
-document.documentElement.setAttribute('data-theme', savedTheme);
-updateIcon(savedTheme);
-
-// 3. Fungsi untuk tukar tema
-toggleButton.addEventListener('click', () => {
-  let currentTheme = document.documentElement.getAttribute('data-theme');
-  let newTheme = (currentTheme === 'dark') ? 'light' : 'dark';
-  
-  document.documentElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
-  
-  updateIcon(newTheme);
-});
-
-// 4. Fungsi pembantu untuk tukar ikon
-function updateIcon(theme) {
-  if (theme === 'dark') {
-    themeIcon.textContent = '🌙'; // Ikon bulan untuk mode gelap
-  } else {
-    themeIcon.textContent = '☀️'; // Ikon matahari untuk mode cerah
-  }
+function type() {
+    if (charIndex < texts[textIndex].length) {
+        typewriter.textContent += texts[textIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 100);
+    } else {
+        setTimeout(deleteText, 2000);
+    }
 }
+
+function deleteText() {
+    if (charIndex > 0) {
+        typewriter.textContent = texts[textIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(deleteText, 50);
+    } else {
+        textIndex = (textIndex + 1) % texts.length;
+        setTimeout(type, 500);
+    }
+}
+
+// Mulakan effect bila page loading
+document.addEventListener('DOMContentLoaded', type);
+
