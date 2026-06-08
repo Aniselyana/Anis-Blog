@@ -1,49 +1,55 @@
-# Personal Blog Portfolio
+# Personal Blog Portfolio - CSD34203
 
 ## Project Description
+This project is a personal blog portfolio built to fulfill the assessment requirements for the subject **CSD 34203: Special Topics in Software Development** at Sultan Zainal Abidin University (UniSZA). 
 
-This project is a personal blog portfolio website developed using HTML, CSS, and JavaScript. 
-
-The purpose of this project is to showcase my learning journey, skills, experiences, and technical knowledge as a student of Bachelor of Information Technology (Media Informatics). It serves as a digital space to document my growth in web development, multimedia technology, and interactive media.
-
+This website is designed using a *Mobile-First* approach to ensure the display is responsive, mobile-friendly, and provides the best user experience (UI/UX) on various screen sizes.
 ---
 
 ## Features
+- **Responsive Design:** Fully optimized for Desktop, Tablet, and Mobile devices using CSS Media Queries.
+- **Interactive UI:** Dark-themed modern layout with glassmorphism effects and smooth scroll animations.
+- **Theme Toggle:** Built-in Dark/Light mode functionality using JavaScript.
+- **Dynamic Content:** A dedicated blog section showcasing my learning progress.
+- **Downloadable Resume:** Easy access to my professional profile.
+- **Contact Integration:** Functional contact communication flow.
 
-- **Home Page:** Engaging landing page with a warm welcome and project highlights.
-- **About Me Page:** Personal biography, technical skills overview, and resume download.
-- **Blog Page:** A dedicated section to share academic projects and learning progress.
-- **Contact Page:** Minimalist contact form for professional inquiries.
-- **Responsive Design:** Optimized for both mobile devices and desktop screens.
-- **Interactive Elements:** Smooth animations, hover effects, and modal popups for evidence.
+---
+
+## Pages Overview
+1. **Home Page:** Welcoming interface with navigation and introduction.
+2. **About Page:** Professional biography, technical skills (HTML, CSS, JS, Unity, Vuforia, Adobe Suite), and education background.
+3. **Blog Page:** A collection of my tech insights, including:
+   - *My Internship Experience*
+   - *Building My First Website*
+   - *My FYP: IsyaratKu AR Learning Application*
+4. **Contact Page:** Direct contact information and message form.
 
 ---
 
 ## Technologies Used
-
-- **Frontend:** HTML5, CSS3 (with Glassmorphism effect), JavaScript
+- **Frontend:** HTML5, CSS3, JavaScript (ES6)
 - **Design Tools:** Canva, Adobe Photoshop
-- **Development Tools:** VS Code
-- **Version Control:** Git & GitHub
+- **Development Tools:** VS Code, Git/GitHub
+- **Responsive Logic:** CSS `@media` queries
 
 ---
 
 ## Folder Structure
-
 ```text
-Anis-Blog-Portfolio/
+personal-blog-portfolio/
 │
 ├── index.html          # Home Page
 ├── about.html          # About Me Page
-├── blog.html           # Project/Blog Page
+├── blog.html           # Blog/Projects Page
 ├── contact.html        # Contact Page
 │
 ├── css/
-│   └── style.css       # Main Stylesheet
+│   └── style.css       # Styling & Responsive Design
 │
 ├── js/
-│   └── script.js       # Interactive Scripts (Modal/Theme Toggle)
+│   └── script.js       # Interactive Features & Dark Mode
 │
-├── assets/             # Images and Resume PDF
+├── images/             # Profile pictures & assets
 │
-└── README.md           # Project Documentation
+└── README.md           # Documentation
