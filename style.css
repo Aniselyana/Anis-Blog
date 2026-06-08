@@ -1102,4 +1102,21 @@ body {
     box-shadow: 0 0 10px rgba(139, 92, 246, 0.5); /* Kesan cahaya */
     transform: translateY(-2px); /* Butang naik sedikit */
 }
+/* Untuk skrin yang lebarnya 768px ke bawah (Phone) */
+@media screen and (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr !important; /* Paksa jadi 1 kolum sahaja */
+        padding: 20px;
+    }
+
+    .contact-form-section, .contact-info-section {
+        width: 100%; /* Pastikan ia ambil lebar penuh skrin */
+        margin: 0;
+    }
+
+    /* Tambahan untuk mengelakkan elemen melimpah keluar skrin */
+    body {
+        overflow-x: hidden; 
+    }
+}
 
