@@ -1,32 +1,49 @@
-# Personal Blog Portfolio - CSD34203
+# Personal Blog Portfolio
 
-## Deskripsi Projek
-Projek ini merupakan sebuah portfolio blog peribadi yang dibina bagi memenuhi keperluan penilaian bagi subjek **CSD 34203: Special Topics in Software Development** di Universiti Sultan Zainal Abidin (UniSZA). 
+## Project Description
 
-Laman web ini direka bentuk menggunakan pendekatan *Mobile-First* bagi memastikan paparan adalah responsif, mesra peranti mudah alih, dan memberikan pengalaman pengguna (UI/UX) yang terbaik di pelbagai saiz skrin.
+This project is a personal blog portfolio website developed using HTML, CSS, and JavaScript. 
 
----
-
-## Ciri-Ciri Utama (Features)
-* **Halaman Utama (Home):** Pengenalan ringkas mengenai blog dan pemilik portfolio.
-* **Halaman Mengenai Saya (About):** Profil ringkas pemilik berserta gambar profil yang responsif.
-* **Halaman Blog:** Mempunyai 2-3 contoh artikel atau hantaran blog yang disusun menggunakan susunan Grid.
-* **Halaman Hubungi (Contact):** Borang maklum balas yang mesra pengguna peranti mudah alih.
-* **Reka Bentuk Responsif:** Menggunakan CSS Media Queries untuk penyesuaian paparan telefon bimbit dan komputer riba.
+The purpose of this project is to showcase my learning journey, skills, experiences, and technical knowledge as a student of Bachelor of Information Technology (Media Informatics). It serves as a digital space to document my growth in web development, multimedia technology, and interactive media.
 
 ---
 
-## Teknologi yang Digunakan
-* **HTML5:** Untuk struktur dan semantik kandungan halaman web.
-* **CSS3:** Untuk gaya reka bentuk, Flexbox, CSS Grid, dan Media Queries.
-* **Git & GitHub:** Untuk kawalan versi (version control) dan pengurusan repositori portfolio.
+## Features
+
+- **Home Page:** Engaging landing page with a warm welcome and project highlights.
+- **About Me Page:** Personal biography, technical skills overview, and resume download.
+- **Blog Page:** A dedicated section to share academic projects and learning progress.
+- **Contact Page:** Minimalist contact form for professional inquiries.
+- **Responsive Design:** Optimized for both mobile devices and desktop screens.
+- **Interactive Elements:** Smooth animations, hover effects, and modal popups for evidence.
 
 ---
 
-## Cara Menjalankan Projek
-1.  Muat turun (*Clone*) repositori ini ke komputer anda:
-    ```bash
-    git clone <PASTE_LINK_REPO_ANDA_DI_SINI>
-    ```
-2.  Buka folder projek menggunakan perisian penyunting kod seperti **VS Code**.
-3.  Klik dua kali pada fail `index.html` untuk membukanya terus di dalam pelayar web (browser) anda.
+## Technologies Used
+
+- **Frontend:** HTML5, CSS3 (with Glassmorphism effect), JavaScript
+- **Design Tools:** Canva, Adobe Photoshop
+- **Development Tools:** VS Code
+- **Version Control:** Git & GitHub
+
+---
+
+## Folder Structure
+
+```text
+Anis-Blog-Portfolio/
+│
+├── index.html          # Home Page
+├── about.html          # About Me Page
+├── blog.html           # Project/Blog Page
+├── contact.html        # Contact Page
+│
+├── css/
+│   └── style.css       # Main Stylesheet
+│
+├── js/
+│   └── script.js       # Interactive Scripts (Modal/Theme Toggle)
+│
+├── assets/             # Images and Resume PDF
+│
+└── README.md           # Project Documentation
