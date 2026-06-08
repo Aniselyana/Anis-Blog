@@ -1119,4 +1119,25 @@ body {
         overflow-x: hidden; 
     }
 }
+/* --- RESPONSIVE FIX UNTUK MOBILE --- */
+@media screen and (max-width: 768px) {
+    /* Pastikan container tidak melimpah */
+    .container, .contact-container {
+        width: 90% !important; 
+        margin: 0 auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* Paksa form dan info jadi satu kolum */
+    .contact-form-section, .contact-info-section {
+        width: 100% !important;
+        margin: 10px 0 !important;
+    }
+
+    /* Sembunyikan tatalan mendatar */
+    body {
+        overflow-x: hidden !important;
+    }
+}
 
